@@ -1,37 +1,15 @@
-Contador de Palabras Utilizando API de Twitter y Apache Storm
+Experimento Contador de Palabras de doble Entrada de datos 
 ================
-
-##### RAMA eketalhigh
-
-Este repositorio contiene todo lo relacionado al proyecto: 
-Contador de Palabras de Twitter Utilizando la Herramienta **Apache Storm** Basado en https://github.com/jalonsoramos/storm-word-count y utilizando las caracterísitcas de Streaming del mismo.
-
-Además se presenta la implementación de la herramienta [Eketal](https://github.com/unicesi/eketal "Eketal") en este experimento.
-
 Este es un repositorio que se utilizará para un proyecto de investigación de la **Escuela Colombiana de Ingeniería Julio Garavito**.
 
-Se ha actualizado el proyecto para ser usado en apache storm 1.1.0, y se ha ampliado para ser usado no sólo en modo local si no también en modo cluster.
-Además de lo anterior se ha implementado en el modo cluster 3 tipos de instrumentaciones con la herramienta [Eketal](https://github.com/unicesi/eketal "Eketal")
+Este experimento tiene como objetivo replicar y posteriormente solucionar un Issue de Apache Storm utilizando la herramienta [Eketal](https://github.com/unicesi/eketal "Eketal").
 
--**eketalhigh ** (Repositorio Para Correr en Modo Cluster Implementado Eketal De Media Frecuencia)
+El [Issue](https://issues.apache.org/jira/browse/STORM-284 "Issue") seleccionado corresponde a un problema de *starvation*
 
-**Para Ejecutar Esta Aplicación Es Necesario:
-**
-Clonar el repositorio
-Ir a la carpeta del repositorio y ejecutar el comando : 
+La instrumentación con Eketal actual intercepta el método execute(Tuple) de la clase TweetSplitterBolt e imprime ------------------Reaction detected with Eketal--------------------------
+por consola, interceptar este método es importante, ya que gran parte de la solución propuesta tiene que ver con este método.
 
-mvn clean package
+Actualmente este repositorio esta hecho para ser corrido en modo local, y así facilitar las pruebas
 
-En el nodo nimbus ir a la carpeta de apache storm y ejecutar el comando: **bin/storm jar /[ruta a la carpeta contenedora]/TwitterStorm2/target/storm-word-count-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.autentia.tutoriales.WordCountTopology twitter2**
-
-Para cambiar la cantidad de trabajadores solamente es editar la línea config.setNumWorkers(3); 
-en la clase *WordCountTopology.java* .
-
-
-En el **Modo Local**  la salida se genera por consola
-
-En el **Modo Cluster** la salida se genera en un archivo .txt el cual se aconseja cambiar de ruta en la clase  **CountPrinterBolt** 
-
-
-Cualquier sugerencia respecto al respositorio por favor añadir una *Issue* .
-
+Este repositorio contiene todo lo relacionado al proyecto: 
+Experimento Contador de Palabras de doble Entrada de datos Utilizando la Herramienta **Apache Storm** Basado en https://github.com/jalonsoramos/storm-word-count y https://github.com/khajaasmath786/StormTutorial y utlizando las caracterísitcas de Streaming de los mismos.
