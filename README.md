@@ -6,7 +6,10 @@ Este experimento tiene como objetivo replicar y posteriormente solucionar un Iss
 
 El [Issue](https://issues.apache.org/jira/browse/STORM-284 "Issue") seleccionado corresponde a un problema de *starvation*
 
-La instrumentación con Eketal actual intercepta el método execute(Tuple) de la clase TweetSplitterBolt e imprime ------------------Reaction detected with Eketal--------------------------
+La instrumentación con Eketal actual intercepta el método execute(Tuple) de la clase TweetSplitterBolt e imprime 
+
+------------------Reaction detected with Eketal--------------------------
+
 por consola, interceptar este método es importante, ya que gran parte de la solución propuesta tiene que ver con este método.
 
 Actualmente este repositorio esta hecho para ser corrido en modo local, y así facilitar las pruebas
